@@ -6,8 +6,8 @@ from utils.models import CreateUpdate
 #table name = Borrower_loan
 class Loan(CreateUpdate):
     product_name = models.CharField(max_length=55)
-    penor_pinjaman = models.IntegerField(default=0)
-    anggal_publish = models.DateTimeField(blank=True, null=True)
+    tenor_pinjaman = models.IntegerField(default=0)
+    tanggal_publish = models.DateTimeField(blank=True, null=True)
         
     class Meta:
         db_table = "borrower_loan"
