@@ -24,3 +24,12 @@ def updateLoan(idLoan):
     
 def deleteLoan(id):
     Loan.objects.get(id=id).delete()
+    
+    
+#select * from loan
+
+# getByID = Loan.objects.filter(id=2)
+# str(getByID.query)
+
+# getAll = Loan.objects.all()
+# str(getAll.query)

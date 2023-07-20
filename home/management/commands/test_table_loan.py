@@ -6,10 +6,10 @@ class Command(BaseCommand):
     help = ""
     def handle(self, *args, **options):
         print("=== start table loan")
-        # createLoan()
+        createLoan()
         # readAllLoan()
         # updateLoan(1)
-        deleteLoan(1)
+        # deleteLoan(1)
         
         print("=== end process")
         
