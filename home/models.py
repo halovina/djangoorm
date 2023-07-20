@@ -11,3 +11,15 @@ class Loan(CreateUpdate):
         
     class Meta:
         db_table = "borrower_loan"
+        
+class Invoice(CreateUpdate):
+    Loan = models.ForeignKey(
+        Loan,
+        related_name="loan_invoice",
+        on_delete=models.PROTECT
+    )
+    tgl_invoice = models.DateField(blank=True, null=True)
+    principal_amout = models.FloatField(default=0.0)
+    
+    class Meta:
+        db_table = "borrower_loan_invoice"
