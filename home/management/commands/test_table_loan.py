@@ -7,7 +7,7 @@ class Command(BaseCommand):
     help = ""
     def handle(self, *args, **options):
         print("=== start table loan")
-        views_filter.filterOr2()
+        views_filter.filterIEndsWith()
         
         print("=== end process")
         
