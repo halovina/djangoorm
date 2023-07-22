@@ -55,5 +55,45 @@ def filterIEndsWith():
     print(fCont.query)
     print(fCont.values())
     
-
+#where tenor_pinjaman in (70,30)
+def filterByIn():
+    fIn = Loan.objects.filter(tenor_pinjaman__in = [7,30])
+    print(fIn.query)
+    print("=== === ====")
+    print(fIn.values())
+    
+#where tenor_pinjaman < 30
+def filterByLt():
+    fLt = Loan.objects.filter(tenor_pinjaman__lt = 30)
+    print(fLt.query)
+    print("=== === ====")
+    print(fLt.values())
+    
+#where tenor_pinjaman <= 30
+def filterByLte():
+    fLt = Loan.objects.filter(tenor_pinjaman__lte = 30)
+    print(fLt.query)
+    print("=== === ====")
+    print(fLt.values())
+    
+#where tenor_pinjaman > 7
+def filterGt():
+    fgt = Loan.objects.filter(tenor_pinjaman__gt = 7)
+    print(fgt.query)
+    print("=== === ====")
+    print(fgt.values())
+    
+#where tenor_pinjaman >= 7
+def filterGte():
+    fgt = Loan.objects.filter(tenor_pinjaman__gte = 7)
+    print(fgt.query)
+    print("=== === ====")
+    print(fgt.values())
+    
+#where tenor_pinjaman between 5 and 45
+def filterByRange():
+    fgt = Loan.objects.filter(tenor_pinjaman__range = (5, 45))
+    print(fgt.query)
+    print("=== === ====")
+    print(fgt.values())
 
