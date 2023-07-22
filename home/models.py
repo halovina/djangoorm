@@ -19,7 +19,7 @@ class Invoice(CreateUpdate):
         on_delete=models.PROTECT
     )
     tgl_invoice = models.DateField(blank=True, null=True)
-    principal_amout = models.FloatField(default=0.0)
+    principal_amount = models.FloatField(default=0.0)
     
     class Meta:
         db_table = "borrower_loan_invoice"

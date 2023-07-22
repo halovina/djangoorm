@@ -4,13 +4,14 @@ from django.core.management.base import BaseCommand
 # from home import views_filter
 # from home import views_filter_join
 # from home import views_filter_group_orderby
-from home import views_query_not
+# from home import views_query_not
+from home import views_select_only
 
 class Command(BaseCommand):
     help = ""
     def handle(self, *args, **options):
         print("=== start table loan")
-        views_query_not.queryQ()
+        views_select_only.selUsingOnly()
         
         
         
