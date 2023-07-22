@@ -54,4 +54,6 @@ def filterIEndsWith():
     fCont = Loan.objects.filter(product_name__iendswith='NGKA')
     print(fCont.query)
     print(fCont.values())
+    
+
 
