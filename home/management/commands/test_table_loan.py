@@ -7,14 +7,15 @@ from django.core.management.base import BaseCommand
 # from home import views_query_not
 # from home import views_select_only
 # from home import views_q_object
-from home import views_subquery
+# from home import views_subquery
+from home import views_limit_offset
 
 
 class Command(BaseCommand):
     help = ""
     def handle(self, *args, **options):
         print("=== start table loan")
-        views_subquery.sampleSubquery()
+        views_limit_offset.slicingDataUseOffset()
         
         print("=== end process")
         
