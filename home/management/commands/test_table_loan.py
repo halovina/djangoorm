@@ -8,14 +8,15 @@ from django.core.management.base import BaseCommand
 # from home import views_select_only
 # from home import views_q_object
 # from home import views_subquery
-from home import views_limit_offset
+# from home import views_limit_offset
+from home import views_leftjoin_withgroupby
 
 
 class Command(BaseCommand):
     help = ""
     def handle(self, *args, **options):
         print("=== start table loan")
-        views_limit_offset.slicingDataUseOffset()
+        views_leftjoin_withgroupby.getLeftJoinWithGroupBy()
         
         print("=== end process")
         
