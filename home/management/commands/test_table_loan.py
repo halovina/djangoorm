@@ -9,14 +9,15 @@ from django.core.management.base import BaseCommand
 # from home import views_q_object
 # from home import views_subquery
 # from home import views_limit_offset
-from home import views_leftjoin_withgroupby
+# from home import views_leftjoin_withgroupby
+from home import views_onetoonefield
 
 
 class Command(BaseCommand):
     help = ""
     def handle(self, *args, **options):
         print("=== start table loan")
-        views_leftjoin_withgroupby.getLeftJoinWithGroupBy()
+        views_onetoonefield.createCustomerByExistingContact()
         
         print("=== end process")
         

@@ -2,6 +2,24 @@ from django.db import models
 from utils.models import CreateUpdate
 
 # Create your models here.
+class Contact(CreateUpdate):
+    phone = models.CharField(max_length=50, unique=True)
+    address = models.CharField(max_length=255)
+    
+    class Meta:
+        db_table = "contact"
+        
+class Customers(CreateUpdate):
+    firstname = models.CharField(max_length=50)
+    lastname = models.CharField(max_length=50)
+    contact = models.OneToOneField(
+        Contact,
+        related_name="customers_contact",
+        on_delete=models.CASCADE
+    )
+    
+    class Meta:
+        db_table = "customers"
 
 #table name = Borrower_loan
 class Loan(CreateUpdate):
