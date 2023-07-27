@@ -41,3 +41,29 @@ class Invoice(CreateUpdate):
     
     class Meta:
         db_table = "borrower_loan_invoice"
+        
+        
+#table compensation
+    #1 compensation bisa dimiliki oleh lebih dari satu employe
+class Compensation(CreateUpdate):
+    name = models.CharField(max_length=75)
+    
+    class Meta:
+        db_table = "compensation"
+#table employe
+    #1 enploye bisa juga punya banyak compensation
+class Employee(CreateUpdate):
+    firstname = models.CharField(max_length=35)
+    lastname = models.CharField(max_length=35)
+    contact = models.OneToOneField(
+        Contact,
+        related_name="employee_contact",
+        on_delete=models.CASCADE
+    )
+    compensation = models.ManyToManyField(
+        Compensation,
+        related_name="employee_compensation"
+    )
+
+    class Meta:
+        db_table = "employee"
