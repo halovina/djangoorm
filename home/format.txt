@@ -1,0 +1,9 @@
+JSON XML 
+
+#python manage.py dumpdata > dump_data_230727.json
+
+#python manage.py dumpdata > dump_data_230727.xml --format xml
+
+#python manage.py dumpdata home.Loan > borrower_loan.json
+
+#python manage.py dumpdata home > home.json
