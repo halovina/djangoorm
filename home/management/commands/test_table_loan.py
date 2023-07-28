@@ -11,14 +11,16 @@ from django.core.management.base import BaseCommand
 # from home import views_limit_offset
 # from home import views_leftjoin_withgroupby
 # from home import views_onetoonefield
-from home import views_manytomany
+# from home import views_manytomany
+from home import views_insert_modeluuid
 
 
 class Command(BaseCommand):
     help = ""
     def handle(self, *args, **options):
-        print("=== start table loan")
-        views_manytomany.create_compensatioon_employee()
+        print("=== start ======")
+        
+        views_insert_modeluuid.isertTblEvent()
         
         print("=== end process")
         

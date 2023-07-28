@@ -1,5 +1,6 @@
 from django.db import models
 from utils.models import CreateUpdate
+import uuid
 
 # Create your models here.
 class Contact(CreateUpdate):
@@ -67,3 +68,18 @@ class Employee(CreateUpdate):
 
     class Meta:
         db_table = "employee"
+        
+        
+class Event(CreateUpdate):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    event_name = models.CharField(max_length=55)
+    location = models.TextField()
+    employee = models.ForeignKey(
+        Employee,
+        related_name='employee_event',
+        on_delete= models.PROTECT
+    )
+    
+    class Meta:
+        db_table = "employee_event"
+    
