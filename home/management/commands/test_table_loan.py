@@ -12,7 +12,8 @@ from django.core.management.base import BaseCommand
 # from home import views_leftjoin_withgroupby
 # from home import views_onetoonefield
 # from home import views_manytomany
-from home import views_insert_modeluuid
+# from home import views_insert_modeluuid
+from home import view_insert_withslug
 
 
 class Command(BaseCommand):
@@ -20,7 +21,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         print("=== start ======")
         
-        views_insert_modeluuid.isertTblEvent()
+        view_insert_withslug.createNewEvent()
         
         print("=== end process")
         

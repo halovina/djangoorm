@@ -1,5 +1,6 @@
 from django.db import models
 from utils.models import CreateUpdate
+from django.utils.text import slugify
 import uuid
 
 # Create your models here.
@@ -79,6 +80,11 @@ class Event(CreateUpdate):
         related_name='employee_event',
         on_delete= models.PROTECT
     )
+    slug = models.SlugField(blank=True, null=True)
+    
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.event_name)
+        super().save(*args, **kwargs)
     
     class Meta:
         db_table = "employee_event"
