@@ -14,7 +14,8 @@ from django.core.management.base import BaseCommand
 # from home import views_manytomany
 # from home import views_insert_modeluuid
 # from home import view_insert_withslug
-from home import views_django_signal
+# from home import views_django_signal
+from home import views_viewtotalinvoice
 
 
 class Command(BaseCommand):
@@ -22,7 +23,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         print("=== start ======")
         
-        views_django_signal.createNewEvent()
+        views_viewtotalinvoice.getDataViewTable()
         
         print("=== end process")
         

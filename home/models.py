@@ -88,4 +88,14 @@ class Event(CreateUpdate):
     
     class Meta:
         db_table = "employee_event"
+        
+class ViewTableTotalInvoice(models.Model):
+    product_name = models.CharField(max_length=55)
+    tenor_pinjaman = models.IntegerField()
+    total_invoice = models.IntegerField()
+    
+    class Meta:
+        managed = False
+        db_table = "total_invoice"
+
     
