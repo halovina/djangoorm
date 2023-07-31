@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     
     'home',
     'utils',
+    'example',
 ]
 
 MIDDLEWARE = [
@@ -84,6 +85,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'djangoorm',
+        'USER': 'admin',
+        'PASSWORD': 'admin',
+        'HOST': 'localhost',
+        'PORT': '3306'
+    },
+    'example': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'example',
         'USER': 'admin',
         'PASSWORD': 'admin',
         'HOST': 'localhost',
